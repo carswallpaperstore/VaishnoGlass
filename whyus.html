@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover why Vaishno Glass is the preferred choice for premium glass and mirror solutions in Delhi NCR. With 18+ years of experience, certified experts, and unmatched quality.">
+    <title>Why Choose Us | Vaishno Glass Private Limited</title>
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DC2626', // Red accent color
+                        secondary: '#F3F4F6',
+                        dark: '#1F2937'
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/our-projects/whsmith-kashmiri-gate-metro/IMG-20251107-WA0142.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .features-box {
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        .features-box:hover {
+            transform: translateY(-10px);
+        }
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #DC2626;
+        }
+        @media (min-width: 640px) {
+            .stats-counter {
+                font-size: 4rem;
+            }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-dark">
+    <!-- Floating Action Buttons -->
+    <a href="tel:+919555659945" class="floating-button bg-primary text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition duration-300 z-50">
+        <i class="fas fa-phone-alt text-xl"></i>
+    </a>
+    <a href="https://wa.me/919555659945" target="_blank" class="whatsapp-button bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50">
+        <i class="fab fa-whatsapp text-xl"></i>
+    </a>
+
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-40">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold text-primary">Vaishno Glass</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="font-medium hover:text-primary transition duration-300">Home</a>
+                <a href="about.html" class="font-medium hover:text-primary transition duration-300">About</a>
+                <a href="services.html" class="font-medium hover:text-primary transition duration-300">Services</a>
+                <a href="gallery.html" class="font-medium hover:text-primary transition duration-300">Gallery</a>
+                <a href="whyus.html" class="font-medium text-primary transition duration-300">Why Us</a>
+                <a href="contact.html" class="font-medium hover:text-primary transition duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-500">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 absolute w-full shadow-lg">
+               <a href="index.html" class="font-medium hover:text-primary transition duration-300">Home</a>
+                <a href="about.html" class="font-medium hover:text-primary transition duration-300">About</a>
+                <a href="services.html" class="font-medium hover:text-primary transition duration-300">Services</a>
+                <a href="gallery.html" class="font-medium hover:text-primary transition duration-300">Gallery</a>
+                <a href="whyus.html" class="font-medium hover:text-primary transition duration-300">Why Us</a>
+                <a href="contact.html" class="font-medium hover:text-primary transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-96 flex items-center">
+        <div class="container mx-auto px-4 text-center text-white flex flex-col justify-center h-full">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 animate-on-scroll">Why Choose Vaishno Glass</h1>
+            <p class="text-base sm:text-lg md:text-xl max-w-2xl mx-auto animate-on-scroll">Trusted by architects and homeowners for premium glass solutions</p>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold mb-4 text-primary">Unmatched Excellence in Glass Solutions</h2>
+                <p class="text-xl max-w-3xl mx-auto">For over 18 years, we've been the preferred choice for premium glass and mirror installations across Delhi NCR</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check-circle text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center text-primary">High Quality Materials</h3>
+                    <p class="text-base text-center mb-4">We use only IS 2778 certified toughened glass from trusted manufacturers, ensuring maximum safety and durability for all installations.</p>
+                    <ul class="text-left space-y-2 mt-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Premium grade materials sourced from trusted suppliers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>All glass products meet ISI safety standards</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>German and Japanese hardware for smooth operation</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center text-primary">Experienced Team</h3>
+                    <p class="text-base text-center mb-4">Our skilled professionals bring over 20 years of combined industry expertise to every project, ensuring flawless execution.</p>
+                    <ul class="text-left space-y-2 mt-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Skilled professionals with 20+ years of industry expertise</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Certified installers trained in latest techniques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Continuous training on new technologies and methods</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rupee-sign text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center text-primary">Affordable Pricing</h3>
+                    <p class="text-base text-center mb-4">We offer competitive rates without compromising on quality, providing exceptional value for your investment.</p>
+                    <ul class="text-left space-y-2 mt-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Competitive rates without compromising on quality</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Transparent pricing with no hidden costs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Flexible payment options for large projects</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center text-primary">Timely Delivery</h3>
+                    <p class="text-base text-center mb-4">We understand the importance of deadlines and ensure on-time project completion with strict adherence to schedules.</p>
+                    <ul class="text-left space-y-2 mt-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>On-time project completion with strict adherence to deadlines</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Real-time project tracking and updates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Emergency service options for urgent requirements</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-paint-brush text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center text-primary">Custom Design Options</h3>
+                    <p class="text-base text-center mb-4">Our design experts work with you to create tailored solutions that match your unique aesthetic vision.</p>
+                    <ul class="text-left space-y-2 mt-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Tailored solutions to match your unique aesthetic vision</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>3D visualization of proposed designs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Custom sizing and finishing options</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 animate-on-scroll">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center text-primary">Comprehensive Warranty</h3>
+                    <p class="text-base text-center mb-4">We stand behind our work with industry-leading warranties and dedicated after-sales support.</p>
+                    <ul class="text-left space-y-2 mt-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>5-year warranty on all installations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>24/7 customer support hotline</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span>Free maintenance checks for first year</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold mb-4 text-primary">Our Achievements in Numbers</h2>
+                <p class="text-xl max-w-3xl mx-auto">Two decades of excellence reflected in our milestones</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="animate-on-scroll">
+                    <div class="stats-counter mb-4">18+</div>
+                    <h3 class="text-xl font-bold">Years of Experience</h3>
+                    <p class="mt-2">Serving Delhi NCR since 2005</p>
+                </div>
+                
+                <div class="animate-on-scroll">
+                    <div class="stats-counter mb-4">1000+</div>
+                    <h3 class="text-xl font-bold">Projects Completed</h3>
+                    <p class="mt-2">Residential and commercial installations</p>
+                </div>
+                
+                <div class="animate-on-scroll">
+                    <div class="stats-counter mb-4">200+</div>
+                    <h3 class="text-xl font-bold">Corporate Clients</h3>
+                    <p class="mt-2">Trusted by leading businesses</p>
+                </div>
+                
+                <div class="animate-on-scroll">
+                    <div class="stats-counter mb-4">98%</div>
+                    <h3 class="text-xl font-bold">Client Satisfaction</h3>
+                    <p class="mt-2">Repeat customers and referrals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Standards -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold mb-4 text-primary">Quality Certifications & Standards</h2>
+                <p class="text-xl max-w-3xl mx-auto">Our commitment to excellence is validated by industry-leading certifications</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg animate-on-scroll">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">Industry Certifications</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-certificate text-primary mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">ISI Certified Products</h4>
+                                <p>All our glass products meet Indian Standards Institute requirements for safety and quality.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-certificate text-primary mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">ISO 9001:2015 Certified</h4>
+                                <p>Our quality management systems are certified to international standards.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-certificate text-primary mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Safety Compliance</h4>
+                                <p>All installations comply with local building codes and safety regulations.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg animate-on-scroll">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">Our Quality Process</h3>
+                    <ol class="space-y-4">
+                        <li class="flex">
+                            <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full text-white flex items-center justify-center mr-4">1</span>
+                            <div>
+                                <h4 class="font-bold text-lg">Material Inspection</h4>
+                                <p>Thorough quality check of all materials before fabrication.</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full text-white flex items-center justify-center mr-4">2</span>
+                            <div>
+                                <h4 class="font-bold text-lg">Precision Fabrication</h4>
+                                <p>State-of-the-art equipment for accurate cutting and finishing.</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full text-white flex items-center justify-center mr-4">3</span>
+                            <div>
+                                <h4 class="font-bold text-lg">Installation Quality Check</h4>
+                                <p>Rigorous inspection process during and after installation.</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full text-white flex items-center justify-center mr-4">4</span>
+                            <div>
+                                <h4 class="font-bold text-lg">Final Walkthrough</h4>
+                                <p>Client approval and satisfaction verification before project completion.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold mb-4 text-primary">What Our Clients Say</h2>
+                <p class="text-xl max-w-3xl mx-auto">Hear from our satisfied customers across Delhi NCR</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-4 italic">"Vaishno Glass transformed our office with stunning glass partitions. The team was professional, and the quality of work exceeded our expectations. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Amit Sharma</h4>
+                            <p class="text-gray-600">Office Manager, Tech Solutions Pvt. Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-4 italic">"Our new frameless shower enclosure looks absolutely beautiful. The installation was seamless, and the team cleaned up perfectly. We're extremely happy with the results!"</p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Priya Mehra</h4>
+                            <p class="text-gray-600">Homeowner, Delhi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-4 italic">"The designer mirrors installed in our boutique have received countless compliments. Vaishno Glass understood our vision perfectly and delivered exactly what we wanted."</p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Rajiv Kapoor</h4>
+                            <p class="text-gray-600">Owner, Fashion Boutique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Experience the Vaishno Glass Difference</h2>
+            <p class="text-base sm:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">Get in touch today for a free consultation and quote</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+919555659945" class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-6 sm:px-8 rounded-full transition duration-300">Call Now</a>
+                <a href="contact.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-bold py-3 px-6 sm:px-8 rounded-full transition duration-300">Send Message</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="text-center sm:text-left">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Vaishno Glass</h3>
+                    <p class="mb-4">Premium glass and mirror solutions for residential and commercial spaces in Delhi NCR since 2005.</p>
+                    <div class="flex justify-center sm:justify-start space-x-4">
+                        <a href="https://www.facebook.com/share/17NVyMxnJV/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary transition duration-300 transform hover:scale-110" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/vaishnoglass?igsh=MTFldjl0eDVpaW1ldg==" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary transition duration-300 transform hover:scale-110" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://x.com/vaishnoglass?t=iPuna2gYoH7dCejSwJbNPQ&s=09" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary transition duration-300 transform hover:scale-110" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vaishnoglass" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary transition duration-300 transform hover:scale-110" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-primary transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition duration-300">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition duration-300">Services</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition duration-300">Gallery</a></li>
+                        <li><a href="whyus.html" class="hover:text-primary transition duration-300">Why Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="text-xl font-bold mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#toughened-glass" class="hover:text-primary transition duration-300">Toughened Glass</a></li>
+                        <li><a href="services.html#designer-mirrors" class="hover:text-primary transition duration-300">Designer Mirrors</a></li>
+                        <li><a href="services.html#shower-enclosures" class="hover:text-primary transition duration-300">Shower Enclosures</a></li>
+                        <li><a href="services.html#glass-doors-windows" class="hover:text-primary transition duration-300">Glass Doors & Windows</a></li>
+                        <li><a href="services.html#custom-glass" class="hover:text-primary transition duration-300">Custom Glass Work</a></li>
+                    </ul>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="text-xl font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start justify-center sm:justify-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>I-81, Ground Floor, Hari Nagar Extension, Badarpur, New Delhi - 110044</span>
+                        </li>
+                        <li class="flex items-center justify-center sm:justify-start">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>+91-9555659945</span>
+                        </li>
+                        <li class="flex items-center justify-center sm:justify-start">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>info@vaishnoglass.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p>&copy; 2023 Vaishno Glass Private Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

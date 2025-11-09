@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our extensive gallery of premium glass and mirror installations in Delhi NCR. See examples of our work including residential, commercial, and custom glass projects.">
+    <title>Our Projects | Vaishno Glass Private Limited</title>
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DC2626', // Red accent color
+                        secondary: '#F3F4F6',
+                        dark: '#1F2937'
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./images/our-projects/maceo-by-targ-gurgaon/IMG-20251107-WA0116.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .gallery-filter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: #f3f4f6;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #DC2626;
+            color: white;
+        }
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        /* Removed hover effects that displayed text overlays */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 18px;
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 15px;
+            user-select: none;
+        }
+        .prev {
+            left: 20px;
+        }
+        .next {
+            right: 20px;
+        }
+    </style>
+</head>
+<body class="bg-white text-dark">
+    <!-- Floating Action Buttons -->
+    <a href="tel:+919555659945" class="floating-button bg-primary text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition duration-300 z-50">
+        <i class="fas fa-phone-alt text-xl"></i>
+    </a>
+    <a href="https://wa.me/919555659945" target="_blank" class="whatsapp-button bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 z-50">
+        <i class="fab fa-whatsapp text-xl"></i>
+    </a>
+
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-40">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold text-primary">Vaishno Glass</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                   <a href="index.html" class="font-medium hover:text-primary transition duration-300">Home</a>
+                <a href="about.html" class="font-medium hover:text-primary transition duration-300">About</a>
+                <a href="services.html" class="font-medium hover:text-primary transition duration-300">Services</a>
+                <a href="gallery.html" class="font-medium hover:text-primary transition duration-300 text-primary">Gallery</a>
+                <a href="whyus.html" class="font-medium hover:text-primary transition duration-300">Why Us</a>
+                <a href="contact.html" class="font-medium hover:text-primary transition duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-500">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 absolute w-full shadow-lg">
+            <a href="index.html" class="block py-2 font-medium hover:text-primary transition duration-300">Home</a>
+            <a href="about.html" class="block py-2 font-medium hover:text-primary transition duration-300">About</a>
+            <a href="services.html" class="block py-2 font-medium hover:text-primary transition duration-300">Services</a>
+            <a href="gallery.html" class="block py-2 font-medium text-primary transition duration-300">Gallery</a>
+            <a href="whyus.html" class="block py-2 font-medium hover:text-primary transition duration-300">Why Us</a>
+            <a href="contact.html" class="block py-2 font-medium hover:text-primary transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-96 flex items-center">
+        <div class="container mx-auto px-4 text-center text-white flex flex-col justify-center h-full">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 animate-on-scroll">Our Projects</h1>
+            <p class="text-base sm:text-lg md:text-xl max-w-2xl mx-auto animate-on-scroll">Explore our recent premium glass installations</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="py-10 bg-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 animate-on-scroll">
+                <h2 class="text-3xl font-bold mb-4 text-primary">Our Projects</h2>
+                <p class="text-xl max-w-3xl mx-auto">Browse our extensive collection of completed projects across residential and commercial spaces</p>
+            </div>
+            
+            <!-- Gallery filtering removed as per requirements -->
+            
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/saietta-vna-manesar/IMG-20251107-WA0049.jpg" alt="Glass Partition Installation" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/c-100-sector-4-noida/IMG-20251107-WA0102.jpg" alt="Office Glass Installation" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/maceo-by-targ-gurgaon/IMG-20251107-WA0116.jpg" alt="Shower Glass Enclosure" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/brand-house-delhi-ncr/IMG-20251107-WA0129.jpg" alt="Retail Store Glass Facade" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/whsmith-kashmiri-gate-metro/IMG-20251107-WA0142.jpg" alt="Metro Station Glass Installation" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/himalaya-opticals/IMG-20251107-WA0147.jpg" alt="Optical Store Glass Installation" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 7 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/progcap-qutub-institutions-area-delhi/IMG-20251107-WA0157.jpg" alt="Building Glass Facade" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 8 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/saietta-vna-manesar/IMG-20251107-WA0050.jpg" alt="Kitchen Glass Backsplash" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 9 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/c-100-sector-4-noida/IMG-20251107-WA0103.jpg" alt="Office Lobby Glass Wall" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 10 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/saietta-vna-manesar/IMG-20251107-WA0051.jpg" alt="Walk-in Shower Enclosure" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 11 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/c-100-sector-4-noida/IMG-20251107-WA0104.jpg" alt="Meeting Room Glass Partition" class="gallery-img" loading="lazy">
+                </div>
+                
+                <!-- Project 12 -->
+                <div class="gallery-item animate-on-scroll">
+                    <img src="./images/our-projects/brand-house-delhi-ncr/IMG-20251107-WA0130.jpg" alt="Glass Staircase Railing" class="gallery-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold mb-4 text-primary">What Our Clients Say</h2>
+                <p class="text-xl max-w-3xl mx-auto">Hear from our satisfied customers about their experience with our glass installation services</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-4 italic">"Vaishno Glass transformed our office with stunning glass partitions. The team was professional, and the quality of work exceeded our expectations. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Amit Sharma</h4>
+                            <p class="text-gray-600">Office Manager, Tech Solutions Pvt. Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-4 italic">"Our new frameless shower enclosure looks absolutely beautiful. The installation was seamless, and the team cleaned up perfectly. We're extremely happy with the results!"</p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Priya Mehra</h4>
+                            <p class="text-gray-600">Homeowner, Delhi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-4 italic">"The designer mirrors installed in our boutique have received countless compliments. Vaishno Glass understood our vision perfectly and delivered exactly what we wanted."</p>
+                    <div class="flex items-center">
+                        <div class="ml-4">
+                            <h4 class="font-bold">Rajiv Kapoor</h4>
+                            <p class="text-gray-600">Owner, Fashion Boutique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Ready to Transform Your Space?</h2>
+            <p class="text-base sm:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">Get in touch today for a free consultation and quote</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+919555659945" class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-6 sm:px-8 rounded-full transition duration-300">Call Now</a>
+                <a href="contact.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-bold py-3 px-6 sm:px-8 rounded-full transition duration-300">Send Message</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="text-center sm:text-left">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Vaishno Glass</h3>
+                    <p class="mb-4">Premium glass and mirror solutions for residential and commercial spaces in Delhi NCR since 2005.</p>
+                    <div class="flex justify-center sm:justify-start space-x-4">
+                        <a href="https://www.facebook.com/share/17NVyMxnJV/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary transition duration-300 transform hover:scale-110" aria-label="Facebook">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/vaishnoglass?igsh=MTFldjl0eDVpaW1ldg==" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary transition duration-300 transform hover:scale-110" aria-label="Instagram">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://x.com/vaishnoglass?t=iPuna2gYoH7dCejSwJbNPQ&s=09" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary transition duration-300 transform hover:scale-110" aria-label="Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vaishnoglass" target="_blank" rel="noopener noreferrer" class="text-white hover:text-primary transition duration-300 transform hover:scale-110" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-primary transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition duration-300">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition duration-300">Glass Types</a></li>
+                        <li><a href="gallery.html" class="hover:text-primary transition duration-300">Our Projects</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="text-xl font-bold mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#toughened-glass" class="hover:text-primary transition duration-300">Toughened Glass</a></li>
+                        <li><a href="services.html#designer-mirrors" class="hover:text-primary transition duration-300">Designer Mirrors</a></li>
+                        <li><a href="services.html#shower-enclosures" class="hover:text-primary transition duration-300">Shower Enclosures</a></li>
+                        <li><a href="services.html#glass-doors-windows" class="hover:text-primary transition duration-300">Glass Doors & Windows</a></li>
+                        <li><a href="services.html#custom-glass" class="hover:text-primary transition duration-300">Custom Glass Work</a></li>
+                    </ul>
+                </div>
+                <div class="text-center sm:text-left">
+                    <h4 class="text-xl font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start justify-center sm:justify-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>I-81, Ground Floor, Hari Nagar Extension, Badarpur, New Delhi - 110044</span>
+                        </li>
+                        <li class="flex items-center justify-center sm:justify-start">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>+91-9555659945</span>
+                        </li>
+                        <li class="flex items-center justify-center sm:justify-start">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>info@vaishnoglass.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p>&copy; 2023 Vaishno Glass Private Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lightbox functionality for gallery images
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeLightbox = document.querySelector('.close-lightbox');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            
+            let currentIndex = 0;
+            let currentImages = [];
+            
+            // Open lightbox
+            document.querySelectorAll('.gallery-img').forEach((img, index) => {
+                img.addEventListener('click', function() {
+                    currentImages = Array.from(document.querySelectorAll('.gallery-img'));
+                    currentIndex = index;
+                    showImage(currentIndex);
+                    lightbox.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // Close lightbox
+            closeLightbox.addEventListener('click', function() {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close lightbox when clicking on backdrop
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Next image
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % currentImages.length;
+                showImage(currentIndex);
+            });
+            
+            // Previous image
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+                showImage(currentIndex);
+            });
+            
+            // Show image in lightbox
+            function showImage(index) {
+                const img = currentImages[index];
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightboxCaption.textContent = img.alt;
+            }
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (lightbox.style.display === 'flex') {
+                    if (e.key === 'Escape') {
+                        lightbox.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    } else if (e.key === 'ArrowRight') {
+                        currentIndex = (currentIndex + 1) % currentImages.length;
+                        showImage(currentIndex);
+                    } else if (e.key === 'ArrowLeft') {
+                        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+                        showImage(currentIndex);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
